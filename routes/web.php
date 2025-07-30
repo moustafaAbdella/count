@@ -12,16 +12,16 @@ Route::get('/', function () {
 
 
 Route::post('/v4/import', function (Request $request) {
-    Log::channel('vcount')->info('Received data', [
-        'headers' => $request->headers->all(),
-        'body' => $request->all(),
-        'ip' => $request->ip()
-    ]);
+    // Log::channel('vcount')->info('Received data', [
+    //     'headers' => $request->headers->all(),
+    //     'body' => $request->all(),
+    //     'ip' => $request->ip()
+    // ]);
 
-    return response()->json([
-        'status' => 'success',
-        'message' => 'Data received successfully'
-    ]);
+    // return response()->json([
+    //     'status' => 'success',
+    //     'message' => 'Data received successfully'
+    // ]);
 });
 
 Route::post('/import-count', [MqttController::class, 'sendMessage']);
